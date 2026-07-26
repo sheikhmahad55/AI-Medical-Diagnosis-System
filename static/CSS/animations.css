@@ -1,0 +1,279 @@
+/*======================================
+        AI Medical Diagnosis System
+        Animation Stylesheet
+======================================*/
+
+/* Fade Up Animation */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Fade Left */
+
+@keyframes fadeLeft{
+
+0%{
+
+opacity:0;
+
+transform:translateX(-80px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* Fade Right */
+
+@keyframes fadeRight{
+
+0%{
+
+opacity:0;
+
+transform:translateX(80px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* Zoom */
+
+@keyframes zoomIn{
+
+0%{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* Floating */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* Pulse */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* Rotate */
+
+@keyframes rotate360{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* Bounce */
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* Utility Classes */
+
+.fade-up{
+
+animation:fadeUp 1s ease forwards;
+
+}
+
+.fade-left{
+
+animation:fadeLeft 1s ease forwards;
+
+}
+
+.fade-right{
+
+animation:fadeRight 1s ease forwards;
+
+}
+
+.zoom-in{
+
+animation:zoomIn 1s ease forwards;
+
+}
+
+.float{
+
+animation:floating 4s ease-in-out infinite;
+
+}
+
+.pulse{
+
+animation:pulse 2s infinite;
+
+}
+
+.rotate{
+
+animation:rotate360 12s linear infinite;
+
+}
+
+.bounce{
+
+animation:bounce 2s infinite;
+
+}
+
+/* Hover Glow */
+
+.glow:hover{
+
+box-shadow:0 0 30px rgba(37,99,235,.35);
+
+transition:.4s;
+
+}
+
+/* Smooth Card Hover */
+
+.hover-up{
+
+transition:.4s;
+
+}
+
+.hover-up:hover{
+
+transform:translateY(-12px);
+
+}
+
+/* Button Animation */
+
+.btn{
+
+transition:.4s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* Image Hover */
+
+img{
+
+transition:.5s;
+
+}
+
+img:hover{
+
+transform:scale(1.02);
+
+}
+

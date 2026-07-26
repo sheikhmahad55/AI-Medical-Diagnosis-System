@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Medical Diagnosis System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Navbar Start -->
+    <!-- ========================= -->
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+
+        <div class="container">
+
+            <a class="navbar-brand logo" href="#">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                AI MedCare
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/how-it-works">How It Works</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/diagnosis">Diagnosis</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="/admin-login" class="btn btn-outline-primary rounded-pill px-4">
+                            <i class="fa-solid fa-user-shield"></i>
+                            Admin Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ========================= -->
+    <!-- Navbar End -->
+    <!-- ========================= -->
+
+
+
+    <!-- ========================= -->
+    <!-- Hero Section Start -->
+    <!-- ========================= -->
+
+    <section class="hero-section">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Left -->
+
+                <div class="col-lg-6">
+
+                    <span class="hero-badge">
+
+                        Artificial Intelligence Powered
+
+                    </span>
+
+                    <h1 class="hero-title">
+
+                        Predict Diabetes With
+
+                        <span>Artificial Intelligence</span>
+
+                    </h1>
+
+                    <p class="hero-description">
+
+                        AI Medical Diagnosis System helps users
+                        predict diabetes risk using Machine Learning.
+                        Fast, Secure and Easy to Use.
+
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="/diagnosis" class="btn btn-primary custom-btn">
+
+                            Start Diagnosis
+
+                        </a>
+
+                        <a href="/about" class="btn btn-outline-primary">
+
+                            Learn More
+
+                        </a>
+
+                    </div>
+
+                    <div class="hero-info">
+
+                        <div>
+
+                            <h3>95%</h3>
+
+                            <p>Accuracy</p>
+
+                        </div>
+
+                        <div>
+
+                            <h3>24/7</h3>
+
+                            <p>Available</p>
+
+                        </div>
+
+                        <div>
+
+                            <h3>1000+</h3>
+
+                            <p>Predictions</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="col-lg-6 text-center">
+
+                    <img src="images/hero-doctor.png"
+                        class="img-fluid hero-image"
+                        alt="Doctor">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Hero Section End -->
+    <!-- ========================= -->
+
+    <!-- ========================= -->
+<!-- Trusted By Section Start -->
+<!-- ========================= -->
+
+<section class="trusted-section">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-lg-12">
+
+                <h5 class="trusted-title">
+
+                    Trusted By Healthcare Professionals
+
+                </h5>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-md-3 col-6 text-center mb-4">
+
+                <div class="trusted-card">
+
+                    <i class="fa-solid fa-hospital"></i>
+
+                    <h6>Hospitals</h6>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 col-6 text-center mb-4">
+
+                <div class="trusted-card">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <h6>Doctors</h6>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 col-6 text-center mb-4">
+
+                <div class="trusted-card">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <h6>AI Prediction</h6>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 col-6 text-center mb-4">
+
+                <div class="trusted-card">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <h6>Secure Data</h6>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Trusted By Section End -->
+<!-- ========================= -->
+
+
+
+
+
+<!-- ========================= -->
+<!-- Features Section Start -->
+<!-- ========================= -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>Our Features</span>
+
+            <h2>Why Patients Choose Our AI System</h2>
+
+            <p>
+
+                Experience intelligent healthcare powered by Machine Learning
+                with fast, secure and reliable prediction.
+
+            </p>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    <h4>AI Powered</h4>
+
+                    <p>
+
+                        Advanced Machine Learning model predicts
+                        diabetes risk efficiently.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <h4>Fast Prediction</h4>
+
+                    <p>
+
+                        Get instant diagnosis results within seconds.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <h4>Secure</h4>
+
+                    <p>
+
+                        Your medical information remains private and protected.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Features Section End -->
+<!-- ========================= -->
+
+
+
+
+
+<!-- ========================= -->
+<!-- Why Choose Us Start -->
+<!-- ========================= -->
+
+<section class="why-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <img src="images/about-ai.png"
+                    class="img-fluid"
+                    alt="AI Healthcare">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <span class="section-subtitle">
+
+                    Why Choose Us
+
+                </span>
+
+                <h2>
+
+                    Smart Healthcare
+                    Meets Artificial Intelligence
+
+                </h2>
+
+                <p>
+
+                    Our Medical Diagnosis System combines
+                    Artificial Intelligence,
+                    Machine Learning,
+                    and Medical Research
+                    to provide quick and reliable diabetes prediction.
+
+                </p>
+
+                <ul class="why-list">
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        AI Powered Diagnosis
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Modern User Interface
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Fast Prediction
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Secure Patient Data
+
+                    </li>
+
+                </ul>
+
+                <a href="/diagnosis"
+                    class="btn btn-primary custom-btn mt-4">
+
+                    Start Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Why Choose Us End -->
+
+<!-- ========================= -->
+<!-- Statistics Section Start -->
+<!-- ========================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>10K+</h2>
+
+                    <p>Happy Users</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <h2>95%</h2>
+
+                    <p>Prediction Accuracy</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <h2>250+</h2>
+
+                    <p>Medical Experts</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="stats-card">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    <h2>5+</h2>
+
+                    <p>Years Experience</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Statistics Section End -->
+<!-- ========================= -->
+
+
+
+
+
+<!-- ========================= -->
+<!-- Testimonial Section Start -->
+<!-- ========================= -->
+
+<section class="testimonial-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>Testimonials</span>
+
+            <h2>What Our Users Say</h2>
+
+            <p>
+
+                Thousands of users trust our AI-based healthcare system.
+
+            </p>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="testimonial-card">
+
+                    <img src="images/user1.jpg" class="testimonial-img" alt="User">
+
+                    <h5>Ahmed Khan</h5>
+
+                    <p>
+
+                        The prediction system is fast and very easy to use.
+                        Highly recommended.
+
+                    </p>
+
+                    <div class="stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="testimonial-card">
+
+                    <img src="images/user2.jpg" class="testimonial-img" alt="User">
+
+                    <h5>Ali Raza</h5>
+
+                    <p>
+
+                        Beautiful interface with accurate AI prediction.
+                        Amazing experience.
+
+                    </p>
+
+                    <div class="stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="testimonial-card">
+
+                    <img src="images/user3.jpg" class="testimonial-img" alt="User">
+
+                    <h5>Fatima Noor</h5>
+
+                    <p>
+
+                        Professional medical AI project.
+                        Loved the overall experience.
+
+                    </p>
+
+                    <div class="stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Testimonial Section End -->
+<!-- ========================= -->
+
+
+
+
+
+<!-- ========================= -->
+<!-- Call To Action Start -->
+<!-- ========================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h2>
+
+                    Ready To Predict Your Health Using AI?
+
+                </h2>
+
+                <p>
+
+                    Get started with our intelligent diabetes prediction system
+                    and receive your results instantly.
+
+                </p>
+
+            </div>
+
+            <div class="col-lg-4 text-lg-end">
+
+                <a href="/diagnosis"
+                    class="btn btn-light btn-lg">
+
+                    Start Diagnosis
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Call To Action End -->
+
+<!-- ========================= -->
+<!-- Footer Start -->
+<!-- ========================= -->
+
+<footer class="footer-section">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Logo & About -->
+            <div class="col-lg-4 mb-4">
+
+                <h3 class="footer-logo">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    AI MedCare
+
+                </h3>
+
+                <p>
+
+                    AI Medical Diagnosis System is a Machine Learning
+                    based healthcare platform that predicts diabetes
+                    risk quickly, securely, and intelligently.
+
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                </div>
+
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <h5>Quick Links</h5>
+
+                <ul class="footer-links">
+
+                    <li><a href="/">Home</a></li>
+
+                    <li><a href="/about">About</a></li>
+
+                    <li><a href="/services">Services</a></li>
+
+                    <li><a href="/diagnosis">Diagnosis</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Services -->
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <h5>Services</h5>
+
+                <ul class="footer-links">
+
+                    <li><a href="#">Diabetes Prediction</a></li>
+
+                    <li><a href="#">Health Analysis</a></li>
+
+                    <li><a href="#">Medical Report</a></li>
+
+                    <li><a href="#">AI Recommendation</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="col-lg-3 mb-4">
+
+                <h5>Contact</h5>
+
+                <p>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    support@aimedcare.com
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +92 300 1234567
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Lahore, Pakistan
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom text-center">
+
+            <p>
+
+                © 2026 AI Medical Diagnosis System | All Rights Reserved
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ========================= -->
+<!-- Footer End -->
+<!-- ========================= -->
+
+
+
+
+
+<!-- Scroll To Top -->
+
+<button id="scrollTop">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

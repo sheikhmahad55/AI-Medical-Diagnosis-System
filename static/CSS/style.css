@@ -1,0 +1,1820 @@
+/*======================================
+        AI Medical Diagnosis System
+        Main Stylesheet
+======================================*/
+
+/*=============================
+        Google Font
+=============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=============================
+        CSS Variables
+=============================*/
+
+:root{
+
+    --primary:#2563EB;
+    --secondary:#1E40AF;
+    --success:#22C55E;
+    --danger:#EF4444;
+
+    --dark:#1F2937;
+    --white:#ffffff;
+
+    --light:#F8FAFC;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:15px;
+
+    --transition:.4s ease;
+
+}
+
+/*=============================
+        Reset
+=============================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--light);
+
+    color:var(--dark);
+
+    overflow-x:hidden;
+
+}
+
+/*=============================
+        Common
+=============================*/
+
+section{
+
+    padding:100px 0;
+
+}
+
+img{
+
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.section-title span{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin:15px 0;
+
+}
+
+.section-title p{
+
+    color:#666;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/*=============================
+        Buttons
+=============================*/
+
+.custom-btn{
+
+    background:var(--primary);
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.custom-btn:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-5px);
+
+}
+
+/*=============================
+        Navbar
+=============================*/
+
+.custom-navbar{
+
+    background:#ffffff;
+
+    box-shadow:var(--shadow);
+
+    padding:18px 0;
+
+    transition:.4s;
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:var(--primary)!important;
+
+}
+
+.logo i{
+
+    color:#ff3b5c;
+
+    margin-right:8px;
+
+}
+
+.navbar-nav .nav-link{
+
+    color:#333;
+
+    font-weight:500;
+
+    margin-left:20px;
+
+    transition:.3s;
+
+}
+
+.navbar-nav .nav-link:hover{
+
+    color:var(--primary);
+
+}
+
+.navbar-nav .active{
+
+    color:var(--primary)!important;
+
+}
+
+/*======================================
+            Hero Section
+======================================*/
+
+.hero-section{
+
+    padding-top:170px;
+    padding-bottom:120px;
+
+    background:linear-gradient(135deg,#EFF6FF,#FFFFFF);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:#DBEAFE;
+
+    border-radius:50%;
+
+    top:-150px;
+    right:-120px;
+
+    opacity:.6;
+
+}
+
+.hero-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:#BFDBFE;
+
+    border-radius:50%;
+
+    left:-120px;
+    bottom:-120px;
+
+    opacity:.5;
+
+}
+
+/*=============================
+        Hero Badge
+=============================*/
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:#DBEAFE;
+
+    color:var(--primary);
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+/*=============================
+        Hero Title
+=============================*/
+
+.hero-title{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    color:var(--dark);
+
+    margin-bottom:25px;
+
+}
+
+.hero-title span{
+
+    color:var(--primary);
+
+}
+
+/*=============================
+        Hero Description
+=============================*/
+
+.hero-description{
+
+    font-size:18px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/*=============================
+        Hero Buttons
+=============================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons .btn{
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}
+
+/*=============================
+        Hero Info
+=============================*/
+
+.hero-info{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-top:20px;
+
+}
+
+.hero-info div{
+
+    background:#fff;
+
+    box-shadow:var(--shadow);
+
+    border-radius:var(--radius);
+
+    padding:20px 30px;
+
+    transition:var(--transition);
+
+}
+
+.hero-info div:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.hero-info h3{
+
+    color:var(--primary);
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.hero-info p{
+
+    margin:0;
+
+    color:#666;
+
+}
+
+/*=============================
+        Hero Image
+=============================*/
+
+.hero-image{
+
+    width:90%;
+
+    animation:floatImage 4s ease-in-out infinite;
+
+}
+
+/*=============================
+        Floating Animation
+=============================*/
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/*======================================
+        Trusted Section
+======================================*/
+
+.trusted-section{
+
+    background:#ffffff;
+
+    padding:80px 0;
+
+}
+
+.trusted-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+}
+
+.trusted-card{
+
+    background:#fff;
+
+    padding:35px 20px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.trusted-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.trusted-card i{
+
+    font-size:45px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.trusted-card h6{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/*======================================
+        Features Section
+======================================*/
+
+.features-section{
+
+    background:#F8FAFC;
+
+}
+
+.feature-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.feature-card i{
+
+    width:90px;
+
+    height:90px;
+
+    line-height:90px;
+
+    background:#DBEAFE;
+
+    color:var(--primary);
+
+    border-radius:50%;
+
+    font-size:35px;
+
+    margin-bottom:25px;
+
+}
+
+.feature-card h4{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/*======================================
+        Why Choose Us
+======================================*/
+
+.why-section{
+
+    background:#ffffff;
+
+}
+
+.section-subtitle{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.why-section h2{
+
+    font-size:45px;
+
+    font-weight:700;
+
+    margin:20px 0;
+
+}
+
+.why-section p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+}
+
+.why-list{
+
+    padding-left:0;
+
+}
+
+.why-list li{
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+.why-list i{
+
+    color:var(--success);
+
+    margin-right:12px;
+
+    font-size:20px;
+
+}
+
+.why-section img{
+
+    border-radius:25px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+
+    transition:.5s;
+
+}
+
+.why-section img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/*======================================
+            Statistics Section
+======================================*/
+
+.stats-section{
+
+    background:linear-gradient(135deg,#2563EB,#1E40AF);
+
+    color:#fff;
+
+}
+
+.stats-card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:40px 20px;
+
+    transition:var(--transition);
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-10px);
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.stats-card i{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+}
+
+.stats-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.stats-card p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+
+/*======================================
+            Testimonials
+======================================*/
+
+.testimonial-section{
+
+    background:#F8FAFC;
+
+}
+
+.testimonial-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    height:100%;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.testimonial-img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #DBEAFE;
+
+    margin-bottom:20px;
+
+}
+
+.testimonial-card h5{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.testimonial-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+.stars{
+
+    color:#FACC15;
+
+    margin-top:20px;
+
+    font-size:18px;
+
+}
+
+
+/*======================================
+            CTA Section
+======================================*/
+
+.cta-section{
+
+    background:linear-gradient(135deg,#2563EB,#1E40AF);
+
+    color:#fff;
+
+}
+
+.cta-section h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.cta-section p{
+
+    opacity:.9;
+
+}
+
+.cta-section .btn{
+
+    padding:16px 38px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}
+
+
+/*======================================
+            Footer
+======================================*/
+
+.footer-section{
+
+    background:#111827;
+
+    color:#D1D5DB;
+
+    padding:80px 0 30px;
+
+}
+
+.footer-logo{
+
+    color:#fff;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.footer-logo i{
+
+    color:#EF4444;
+
+}
+
+.footer-links{
+
+    padding-left:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:#D1D5DB;
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:#fff;
+
+    padding-left:8px;
+
+}
+
+.social-icons{
+
+    margin-top:25px;
+
+}
+
+.social-icons a{
+
+    width:42px;
+
+    height:42px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#1F2937;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    margin-right:10px;
+
+    transition:var(--transition);
+
+}
+
+.social-icons a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+
+.footer-section h5{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.footer-bottom{
+
+    margin-top:30px;
+
+    color:#9CA3AF;
+
+}
+
+
+/*======================================
+        Scroll To Top
+======================================*/
+
+#scrollTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+    z-index:999;
+
+}
+
+#scrollTop:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--secondary);
+
+}
+
+/*======================================
+        Services Page
+======================================*/
+
+.services-icon{
+
+    width:90px;
+
+    height:90px;
+
+    background:#DBEAFE;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    color:var(--primary);
+
+    font-size:35px;
+
+}
+
+.services-banner{
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/*======================================
+        Pricing Section
+======================================*/
+
+.pricing-section{
+
+    background:#ffffff;
+
+}
+
+.pricing-card{
+
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.pricing-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.pricing-card h1{
+
+    color:var(--primary);
+
+    font-size:55px;
+
+    margin:20px 0;
+
+}
+
+.pricing-card ul{
+
+    padding-left:0;
+
+    margin:30px 0;
+
+}
+
+.pricing-card li{
+
+    margin-bottom:15px;
+
+}
+
+.pricing-card i{
+
+    color:var(--success);
+
+    margin-right:10px;
+
+}
+
+.active-plan{
+
+    border:3px solid var(--primary);
+
+}
+
+.popular-badge{
+
+    position:absolute;
+
+    top:-15px;
+
+    right:20px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/*======================================
+        How It Works Page
+======================================*/
+
+.process-number{
+
+    width:70px;
+
+    height:70px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin:auto auto 20px;
+
+}
+
+.workflow-image{
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/*======================================
+        Diagnosis Page
+======================================*/
+
+.prediction-form{
+
+background:#fff;
+
+padding:50px;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+margin-top:40px;
+
+}
+
+.form-section-title{
+
+font-size:24px;
+
+font-weight:700;
+
+margin-bottom:30px;
+
+color:var(--primary);
+
+padding-bottom:10px;
+
+border-bottom:2px solid #E5E7EB;
+
+}
+
+.form-label{
+
+font-weight:600;
+
+margin-bottom:8px;
+
+}
+
+.form-control,
+.form-select{
+
+height:55px;
+
+border-radius:12px;
+
+border:1px solid #D1D5DB;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+box-shadow:none;
+
+border-color:var(--primary);
+
+}
+
+.form-text{
+
+font-size:13px;
+
+color:#6B7280;
+
+}
+
+/*======================================
+      Health Summary
+======================================*/
+
+.progress{
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.alert{
+
+    border-radius:15px;
+
+}
+
+#predictBtn{
+
+    min-width:240px;
+
+}
+
+/*======================================
+        Loading Page
+======================================*/
+
+.loading-page{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#EFF6FF,#DBEAFE);
+
+}
+
+.loading-card{
+
+background:#fff;
+
+padding:60px;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+}
+
+.loading-icon{
+
+font-size:80px;
+
+color:var(--primary);
+
+margin-bottom:30px;
+
+animation:pulse 2s infinite;
+
+}
+
+/*======================================
+        Loading Steps
+======================================*/
+
+.processing-steps{
+
+text-align:left;
+
+margin-top:40px;
+
+}
+
+.step-item{
+
+display:flex;
+
+align-items:center;
+
+padding:12px 15px;
+
+margin-bottom:12px;
+
+background:#F8FAFC;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.step-item:hover{
+
+transform:translateX(8px);
+
+background:#DBEAFE;
+
+}
+
+.step-item i{
+
+width:45px;
+
+height:45px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:var(--primary);
+
+color:#fff;
+
+border-radius:50%;
+
+margin-right:15px;
+
+font-size:18px;
+
+}
+
+.step-item span{
+
+font-weight:600;
+
+color:#374151;
+
+}
+
+/*======================================
+        Loading Footer
+======================================*/
+
+.loading-page footer,
+footer{
+
+font-size:14px;
+
+color:#6B7280;
+
+}
+
+.loading-card p{
+
+font-size:16px;
+
+}
+
+/*======================================
+      Result Page
+======================================*/
+
+.result-hero{
+
+padding:120px 0 80px;
+
+}
+
+.danger-result{
+
+background:linear-gradient(135deg,#FEE2E2,#FECACA);
+
+}
+
+.result-card{
+
+background:#fff;
+
+padding:60px;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+}
+
+.result-icon{
+
+width:120px;
+
+height:120px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#EF4444;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:50px;
+
+color:#fff;
+
+margin-bottom:30px;
+
+}
+
+.risk-score{
+
+margin-top:35px;
+
+}
+
+.risk-score span{
+
+font-size:60px;
+
+font-weight:800;
+
+color:#DC2626;
+
+}
+/*======================================
+    Positive Result Page
+======================================*/
+
+.result-card h1{
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+.result-card p{
+
+font-size:17px;
+
+color:#6B7280;
+
+line-height:1.8;
+
+}
+
+.feature-card i{
+
+font-size:45px;
+
+margin-bottom:20px;
+
+color:var(--primary);
+
+}
+/*======================================
+    Result Footer
+======================================*/
+
+.result-card{
+
+transition:.3s;
+
+}
+
+.result-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.footer-section{
+
+margin-top:0;
+
+}
+
+.table th{
+
+width:40%;
+
+font-weight:600;
+
+}
+
+.table td{
+
+color:#4B5563;
+
+}
+
+/*======================================
+    Negative Result Page
+======================================*/
+
+.success-result{
+
+background:linear-gradient(135deg,#DCFCE7,#BBF7D0);
+
+}
+
+.success-icon{
+
+width:120px;
+
+height:120px;
+
+margin:auto;
+
+background:#22C55E;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:50px;
+
+color:#fff;
+
+margin-bottom:30px;
+
+}
+
+.success-icon i{
+
+animation:pulse 2s infinite;
+
+}
+
+/*======================================
+    Healthy Result Page
+======================================*/
+
+.success-icon{
+
+transition:.3s;
+
+}
+
+.success-icon:hover{
+
+transform:scale(1.08);
+
+}
+
+.alert-success{
+
+border-radius:15px;
+
+}
+
+/*======================================
+    Result Negative Footer
+======================================*/
+
+.success-result .result-card{
+
+transition:.3s;
+
+}
+
+.success-result .result-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.success-result .risk-score span{
+
+color:#16A34A;
+
+}
+
+.success-result .table th{
+
+font-weight:600;
+
+}
+
+.success-result .table td{
+
+color:#4B5563;
+
+}
+/*======================================
+        Report Page
+======================================*/
+
+.report-header{
+
+padding:100px 0 50px;
+
+background:#EFF6FF;
+
+}
+
+.report-card{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+}
+
+.report-date{
+
+font-size:18px;
+
+font-weight:600;
+
+color:var(--primary);
+
+}
+/*======================================
+        Report Dashboard
+======================================*/
+
+.report-card h1{
+
+font-weight:700;
+
+}
+
+.table-bordered th{
+
+background:#EFF6FF;
+
+}
+
+.table-responsive{
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+.alert-warning{
+
+border-radius:15px;
+
+}
+/*======================================
+        Report Actions
+======================================*/
+
+#printReport,
+#downloadPDF{
+
+min-width:220px;
+
+}
+
+#printReport:hover,
+#downloadPDF:hover{
+
+transform:translateY(-3px);
+
+transition:.3s;
+
+}
+
+.report-card{
+
+transition:.3s;
+
+}
+
+.report-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+/*======================================
+    JavaScript Effects
+======================================*/
+
+.navbar-scrolled{
+
+background:#ffffff !important;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+#scrollTop{
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:50px;
+
+height:50px;
+
+border:none;
+
+border-radius:50%;
+
+background:var(--primary);
+
+color:#fff;
+
+cursor:pointer;
+
+z-index:999;
+
+transition:.3s;
+
+}
+
+#scrollTop:hover{
+
+transform:translateY(-5px);
+
+}
+/*======================================
+    Form Validation
+======================================*/
+
+input:focus,
+select:focus{
+
+box-shadow:0 0 0 .25rem rgba(37,99,235,.20);
+
+border-color:var(--primary);
+
+}
+
+input[readonly]{
+
+background:#F3F4F6;
+
+font-weight:600;
+
+}
+/*======================================
+        Loading Animation
+======================================*/
+
+.progress-bar{
+
+font-weight:600;
+
+transition:width .3s linear;
+
+}
+
+#loadingText{
+
+font-weight:600;
+
+font-size:18px;
+
+color:var(--primary);
+
+min-height:30px;
+
+}

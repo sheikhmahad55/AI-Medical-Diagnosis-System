@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | AI MedCare</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+
+.chart-card{
+    height:450px;
+}
+
+.chart-box{
+    position:relative;
+    height:350px;
+    width:100%;
+}
+
+</style>
+
+</head>
+
+<body class="bg-light">
+
+<div class="container py-5">
+
+<h1 class="text-center mb-5">
+<i class="fa-solid fa-chart-line"></i>
+Admin Dashboard
+</h1>
+
+<div class="row">
+
+<div class="col-md-3 mb-4">
+<div class="card shadow text-center border-primary">
+<div class="card-body">
+<i class="fa-solid fa-users fa-3x text-primary mb-3"></i>
+<h5>Total Patients</h5>
+<h2>{{ total }}</h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4">
+<div class="card shadow text-center border-danger">
+<div class="card-body">
+<i class="fa-solid fa-heart-crack fa-3x text-danger mb-3"></i>
+<h5>High Risk</h5>
+<h2>{{ high }}</h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4">
+<div class="card shadow text-center border-success">
+<div class="card-body">
+<i class="fa-solid fa-heart fa-3x text-success mb-3"></i>
+<h5>Low Risk</h5>
+<h2>{{ low }}</h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 mb-4">
+<div class="card shadow text-center border-warning">
+<div class="card-body">
+<i class="fa-solid fa-percent fa-3x text-warning mb-3"></i>
+<h5>Average Risk</h5>
+<h2>{{ avg_risk }}%</h2>
+</div>
+</div>
+</div>
+
+</div>
+
+<hr class="my-5">
+<div class="row mb-5">
+
+    <div class="col-lg-6">
+
+        <div class="card shadow" style="height:500px;">
+
+            <div class="card-body">
+
+                <h4 class="text-center mb-3">
+                    Patient Distribution
+                </h4>
+
+                <div style="position:relative;height:380px;width:100%;">
+
+                    <canvas id="pieChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="card shadow" style="height:500px;">
+
+            <div class="card-body">
+
+                <h4 class="text-center mb-3">
+                    Risk Comparison
+                </h4>
+
+                <div style="position:relative;height:380px;width:100%;">
+
+                    <canvas id="barChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row mb-5">
+
+    <div class="col-lg-6">
+
+        <div class="card shadow" style="height:500px;">
+
+            <div class="card-body">
+
+                <h4 class="text-center mb-3">
+                    Gender Distribution
+                </h4>
+
+                <div style="position:relative;height:380px;width:100%;">
+
+                    <canvas id="genderChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="card shadow" style="height:500px;">
+
+            <div class="card-body">
+
+                <h4 class="text-center mb-3">
+                    Age Distribution
+                </h4>
+
+                <div style="position:relative;height:380px;width:100%;">
+
+                    <canvas id="ageChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<h3 class="mb-4">
+Recent Patients
+</h3>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Risk</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for patient in recent %}
+
+<tr>
+
+<td>{{ patient.id }}</td>
+<td>{{ patient.name }}</td>
+<td>{{ patient.age }}</td>
+<td>{{ patient.gender }}</td>
+<td>{{ patient.risk }}%</td>
+
+<td>
+
+{% if patient.prediction=="High Risk" %}
+
+<span class="badge bg-danger">
+High Risk
+</span>
+
+{% else %}
+
+<span class="badge bg-success">
+Low Risk
+</span>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="text-center mt-5">
+
+<a href="/" class="btn btn-primary">
+    <i class="fa-solid fa-house"></i>
+    Home
+</a>
+
+<a href="/history" class="btn btn-success">
+    <i class="fa-solid fa-clock-rotate-left"></i>
+    Patient History
+</a>
+
+<a href="/logout" class="btn btn-danger">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</a>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const high = {{ high }};
+const low = {{ low }};
+
+const male = {{ male }};
+const female = {{ female }};
+
+const age20 = {{ age20 }};
+const age31 = {{ age31 }};
+const age41 = {{ age41 }};
+const age51 = {{ age51 }};
+const age60 = {{ age60 }};
+
+// ====================
+// Pie Chart
+// ====================
+
+new Chart(document.getElementById("pieChart"), {
+
+    type: "pie",
+
+    data: {
+
+        labels: ["High Risk", "Low Risk"],
+
+        datasets: [{
+
+            data: [high, low],
+
+            backgroundColor: [
+
+                "#dc3545",
+
+                "#198754"
+
+            ]
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false
+
+    }
+
+});
+
+// ====================
+// Bar Chart
+// ====================
+
+new Chart(document.getElementById("barChart"), {
+
+    type: "bar",
+
+    data: {
+
+        labels: ["High Risk", "Low Risk"],
+
+        datasets: [{
+
+            label: "Patients",
+
+            data: [high, low],
+
+            backgroundColor: [
+
+                "#dc3545",
+
+                "#198754"
+
+            ]
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true,
+
+                ticks: {
+
+                    precision: 0
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+// ====================
+// Gender Chart
+// ====================
+
+new Chart(document.getElementById("genderChart"), {
+
+    type: "doughnut",
+
+    data: {
+
+        labels: ["Male", "Female"],
+
+        datasets: [{
+
+            data: [male, female],
+
+            backgroundColor: [
+
+                "#0d6efd",
+
+                "#e83e8c"
+
+            ]
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false
+
+    }
+
+});
+
+
+// ====================
+// Age Distribution
+// ====================
+
+new Chart(document.getElementById("ageChart"), {
+
+    type: "line",
+
+    data: {
+
+        labels: [
+
+            "20-30",
+
+            "31-40",
+
+            "41-50",
+
+            "51-60",
+
+            "60+"
+
+        ],
+
+        datasets: [{
+
+            label: "Patients",
+
+            data: [
+
+                age20,
+
+                age31,
+
+                age41,
+
+                age51,
+
+                age60
+
+            ],
+
+            borderColor: "#0d6efd",
+
+            backgroundColor: "rgba(13,110,253,0.2)",
+
+            fill: true,
+
+            tension: 0.4
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
